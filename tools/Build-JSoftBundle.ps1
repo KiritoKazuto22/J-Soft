@@ -73,6 +73,11 @@ param(
     [switch]$ValidateOnly
 )
 
+# Bei irm | iex wird der param-Block nicht als Dateiparameter gebunden.
+if ($null -eq $ValidateOnly) {
+    $ValidateOnly = $false
+}
+
 Set-StrictMode -Version Latest
 $ErrorActionPreference = "Stop"
 
