@@ -1,0 +1,9 @@
+﻿[2026-08-05 11:22:09.150] [INFO] J-Soft Version: 0.1.0
+[2026-08-05 11:22:09.155] [INFO] Windows Version: Microsoft Windows NT 10.0.26100.0
+[2026-08-05 11:22:09.155] [INFO] WinGet Version: v1.29.280
+[2026-08-05 11:22:09.165] [INFO] Anwendungen geladen: 204
+[2026-08-05 11:22:09.165] [INFO] Administratorrechte: True
+[2026-08-05 11:22:09.165] [INFO] WinGet Status: WinGet bereit.
+[2026-08-05 11:24:00.031] [INFO] Anwendung: CPU-Z; Paket-ID: CPUID.CPU-Z; Paketmanager: winget
+[2026-08-05 11:24:07.999] [INFO] Ausgeführte Argumente: install --id CPUID.CPU-Z --exact --source winget --accept-package-agreements --accept-source-agreements --silent --disable-interactivity
+[2026-08-05 11:24:08.003] [INFO] Exitcode für CPU-Z: 0

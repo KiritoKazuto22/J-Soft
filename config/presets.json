@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 ﻿{
     "schemaVersion":  "0.1",
     "presets":  [
@@ -14,3 +15,21 @@
                     }
                 ]
 }
+=======
+﻿{
+    "schemaVersion":  "0.1",
+    "presets":  [
+                    {
+                        "id":  "kunden-einrichtung",
+                        "name":  "Kunden-Einrichtung",
+                        "description":  "",
+                        "applications":  [
+                                             "7zip",
+                                             "adobe",
+                                             "chrome",
+                                             "teamviewer"
+                                         ]
+                    }
+                ]
+}
+>>>>>>> 24ec4e3d649b0170c2d1448a9b7af42601f0cafe
