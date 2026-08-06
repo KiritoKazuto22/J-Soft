@@ -1,0 +1,16 @@
+﻿{
+    "schemaVersion":  "0.1",
+    "presets":  [
+                    {
+                        "id":  "kunden-einrichtung",
+                        "name":  "Kunden-Einrichtung",
+                        "description":  "",
+                        "applications":  [
+                                             "7zip",
+                                             "adobe",
+                                             "chrome",
+                                             "teamviewer"
+                                         ]
+                    }
+                ]
+}

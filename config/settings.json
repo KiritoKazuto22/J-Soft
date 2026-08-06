@@ -1,0 +1,10 @@
+{
+  "schemaVersion": "0.1",
+  "applicationName": "J-Soft",
+  "displayName": "J-Soft Software Center",
+  "version": "0.1.0",
+  "developer": "Jonas Bernert",
+  "defaultPackageManager": "winget",
+  "showPackageIdsByDefault": true,
+  "logDirectory": "logs"
+}

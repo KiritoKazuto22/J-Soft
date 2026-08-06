@@ -1,0 +1,14 @@
+{
+  "schemaVersion": "0.1",
+  "categories": [
+    { "id": "browser", "name": "Browser", "order": 10 },
+    { "id": "entwicklung", "name": "Entwicklung", "order": 20 },
+    { "id": "werkzeuge", "name": "Werkzeuge", "order": 30 },
+    { "id": "techniker", "name": "Techniker", "order": 40 },
+    { "id": "medien", "name": "Medien", "order": 50 },
+    { "id": "kommunikation", "name": "Kommunikation", "order": 60 },
+    { "id": "gaming", "name": "Gaming", "order": 70 },
+    { "id": "microsoft", "name": "Microsoft", "order": 80 },
+    { "id": "self-hosting", "name": "Self-Hosting", "order": 90 }
+  ]
+}

@@ -1,0 +1,7 @@
+# Lokale Laufzeitdaten
+logs/*.log
+
+# Temporäre PowerShell-/Editor-Dateien
+*.tmp
+*.bak
+*.swp
