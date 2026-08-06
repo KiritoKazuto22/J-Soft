@@ -21,6 +21,16 @@ Validierung ohne interaktives Fenster:
 .\Start-J-Soft.ps1 -ValidateOnly
 ```
 
+## Direkter Start aus GitHub
+
+Nach dem Veröffentlichen von `Start-J-Soft-Remote.ps1` kann J-Soft ohne manuellen Klon direkt gestartet werden:
+
+```powershell
+irm https://raw.githubusercontent.com/KiritoKazuto22/J-Soft/main/Start-J-Soft-Remote.ps1 | iex
+```
+
+Der Remote-Launcher lädt das Projekt nur vorübergehend nach `%TEMP%`, startet J-Soft lokal mit Administratorrechten und entfernt die temporären Dateien nach dem Beenden. Für produktive Nutzung sollte der Inhalt vor dem Ausführen geprüft werden.
+
 ## Voraussetzungen
 
 - Windows 11 oder ein aktuelles Windows mit WPF-Unterstuetzung.
