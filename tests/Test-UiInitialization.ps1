@@ -89,8 +89,6 @@ try {
 
     $firstAppId = [string]$catalog.Applications[0].id
     Toggle-JSoftApplicationSelection -AppId $firstAppId
-<<<<<<< HEAD
-
     $oldWingetInstalled = $script:JSoft.WingetStatus.IsInstalled
     $oldWingetSourceAvailable = $script:JSoft.WingetStatus.SourceAvailable
     $oldChocolateyInstalled = $script:JSoft.ChocolateyStatus.IsInstalled
@@ -108,8 +106,6 @@ try {
     $script:JSoft.WingetStatus.IsInstalled = $oldWingetInstalled
     $script:JSoft.WingetStatus.SourceAvailable = $oldWingetSourceAvailable
     $script:JSoft.ChocolateyStatus.IsInstalled = $oldChocolateyInstalled
-=======
->>>>>>> 24ec4e3d649b0170c2d1448a9b7af42601f0cafe
     if (-not $script:JSoft.Selected.Contains($firstAppId)) {
         throw "Kartenklick konnte keine Anwendung auswählen."
     }

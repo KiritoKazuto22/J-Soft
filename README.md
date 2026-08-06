@@ -23,13 +23,19 @@ Validierung ohne interaktives Fenster:
 
 ## Direkter Start aus GitHub
 
-Nach dem Veröffentlichen von `Start-J-Soft-Remote.ps1` kann J-Soft ohne manuellen Klon direkt gestartet werden:
+Nach dem Veröffentlichen von `J-Soft-Bundle.ps1` kann J-Soft ohne manuellen Klon direkt gestartet werden:
 
 ```powershell
-irm https://raw.githubusercontent.com/KiritoKazuto22/J-Soft/main/Start-J-Soft-Remote.ps1 | iex
+irm https://raw.githubusercontent.com/KiritoKazuto22/J-Soft/main/J-Soft-Bundle.ps1 | iex
 ```
 
-Der Remote-Launcher lädt das Projekt nur vorübergehend nach `%TEMP%`, startet J-Soft lokal mit Administratorrechten und entfernt die temporären Dateien nach dem Beenden. Für produktive Nutzung sollte der Inhalt vor dem Ausführen geprüft werden.
+Das Bundle enthält die Anwendung, Module und den Katalog in einer einzelnen PowerShell-Datei. `irm` lädt den Inhalt in den Arbeitsspeicher und `iex` führt ihn aus. J-Soft legt nur Laufzeitdaten wie Protokolle und bearbeitete Presets unter `%LOCALAPPDATA%\J-Soft` ab. Vor dem Einsatz sollte der veröffentlichte Inhalt geprüft werden.
+
+Bundle lokal erzeugen:
+
+```powershell
+.\tools\Build-JSoftBundle.ps1
+```
 
 ## Voraussetzungen
 
@@ -113,7 +119,6 @@ Der Import uebernimmt nur strukturierte installierbare Anwendungen. WinGet-Quell
 ## Bekannte Einschraenkungen
 
 - Noch kein Self-Hosting.
-- Kein `irm | iex`.
 - Keine automatische Aktualisierung.
 - Kein separater Editor.
 - Keine Windows-Tweaks, Debloating-, ISO- oder Systemreparaturfunktionen.

@@ -28,6 +28,9 @@ function Write-JSoftPresetsFile {
         [object[]]$Presets
     )
 
+    if (-not (Test-Path -LiteralPath $ConfigPath)) {
+        New-Item -Path $ConfigPath -ItemType Directory -Force | Out-Null
+    }
     $path = Join-Path $ConfigPath "presets.json"
     $document = [ordered]@{
         schemaVersion = "0.1"

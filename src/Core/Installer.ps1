@@ -22,13 +22,25 @@ function Start-JSoftInstallRunspace {
         [System.Collections.Concurrent.ConcurrentQueue[object]]$Queue
     )
 
-    $scriptBlock = {
-        param($apps, $manager, $rootPath, $logPath, $queue)
+    $embeddedModules = $null
+    if ($script:JSoft.Contains("BundleModules")) {
+        $embeddedModules = $script:JSoft.BundleModules
+    }
 
-        . (Join-Path $rootPath "src\\Security\\Security.ps1")
-        . (Join-Path $rootPath "src\\Logging\\Logging.ps1")
-        . (Join-Path $rootPath "src\\PackageManagers\\Winget.ps1")
-        . (Join-Path $rootPath "src\\PackageManagers\\Chocolatey.ps1")
+    $scriptBlock = {
+        param($apps, $manager, $rootPath, $logPath, $queue, $embeddedModules)
+
+        if ($embeddedModules) {
+            . ([scriptblock]::Create([string]$embeddedModules.Security))
+            . ([scriptblock]::Create([string]$embeddedModules.Logging))
+            . ([scriptblock]::Create([string]$embeddedModules.Winget))
+            . ([scriptblock]::Create([string]$embeddedModules.Chocolatey))
+        } else {
+            . (Join-Path $rootPath "src\\Security\\Security.ps1")
+            . (Join-Path $rootPath "src\\Logging\\Logging.ps1")
+            . (Join-Path $rootPath "src\\PackageManagers\\Winget.ps1")
+            . (Join-Path $rootPath "src\\PackageManagers\\Chocolatey.ps1")
+        }
 
         $script:JSoftLogPath = $logPath
         $script:JSoftLogDirectory = Split-Path -Parent $logPath
@@ -121,6 +133,7 @@ function Start-JSoftInstallRunspace {
     [void]$powerShell.AddArgument($RootPath)
     [void]$powerShell.AddArgument($LogPath)
     [void]$powerShell.AddArgument($Queue)
+    [void]$powerShell.AddArgument($embeddedModules)
 
     $handle = $powerShell.BeginInvoke()
     return [pscustomobject]@{

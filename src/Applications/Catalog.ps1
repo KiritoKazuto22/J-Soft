@@ -65,13 +65,28 @@ function Test-JSoftApplicationCatalog {
 function Import-JSoftCatalog {
     param(
         [Parameter(Mandatory)]
-        [string]$ConfigPath
+        [string]$ConfigPath,
+
+        [pscustomobject]$EmbeddedConfig,
+
+        [string]$PresetPath
     )
 
-    $settings = Read-JSoftJsonFile -Path (Join-Path $ConfigPath "settings.json")
-    $applications = Read-JSoftJsonFile -Path (Join-Path $ConfigPath "applications.json")
-    $categories = Read-JSoftJsonFile -Path (Join-Path $ConfigPath "categories.json")
-    $presets = Read-JSoftJsonFile -Path (Join-Path $ConfigPath "presets.json")
+    if ($EmbeddedConfig) {
+        $settings = $EmbeddedConfig.Settings
+        $applications = $EmbeddedConfig.Applications
+        $categories = $EmbeddedConfig.Categories
+        $presets = $EmbeddedConfig.Presets
+
+        if (-not [string]::IsNullOrWhiteSpace($PresetPath) -and (Test-Path -LiteralPath $PresetPath)) {
+            $presets = Read-JSoftJsonFile -Path $PresetPath
+        }
+    } else {
+        $settings = Read-JSoftJsonFile -Path (Join-Path $ConfigPath "settings.json")
+        $applications = Read-JSoftJsonFile -Path (Join-Path $ConfigPath "applications.json")
+        $categories = Read-JSoftJsonFile -Path (Join-Path $ConfigPath "categories.json")
+        $presets = Read-JSoftJsonFile -Path (Join-Path $ConfigPath "presets.json")
+    }
 
     $validationErrors = @(Test-JSoftApplicationCatalog -Catalog $applications)
     if ($validationErrors.Count -gt 0) {

@@ -1030,16 +1030,12 @@ function Select-JSoftVisibleApplications {
 function Update-JSoftSelectionUi {
     $count = $script:JSoft.Selected.Count
     $script:JSoft.Ui.SelectedCountText.Text = "{0} ausgewählt" -f $count
-<<<<<<< HEAD
     $managerReady = if ($script:JSoft.Ui.ChocolateyRadio.IsChecked) {
         $script:JSoft.ChocolateyStatus.IsInstalled
     } else {
         $script:JSoft.WingetStatus.IsInstalled -and $script:JSoft.WingetStatus.SourceAvailable
     }
     $script:JSoft.Ui.InstallButton.IsEnabled = ($count -gt 0 -and -not $script:JSoft.InstallationRunning -and $managerReady)
-=======
-    $script:JSoft.Ui.InstallButton.IsEnabled = ($count -gt 0 -and -not $script:JSoft.InstallationRunning -and $script:JSoft.WingetStatus.IsInstalled -and $script:JSoft.WingetStatus.SourceAvailable)
->>>>>>> 24ec4e3d649b0170c2d1448a9b7af42601f0cafe
 
     foreach ($appId in $script:JSoft.CardControls.Keys) {
         Update-JSoftCardVisual -AppId ([string]$appId)
@@ -1220,11 +1216,8 @@ function Initialize-JSoftUi {
     }
 
     $script:JSoft.Ui.SearchBox.Add_TextChanged({ Refresh-JSoftApplicationsUi })
-<<<<<<< HEAD
     $script:JSoft.Ui.WingetRadio.Add_Checked({ Update-JSoftSelectionUi })
     $script:JSoft.Ui.ChocolateyRadio.Add_Checked({ Update-JSoftSelectionUi })
-=======
->>>>>>> 24ec4e3d649b0170c2d1448a9b7af42601f0cafe
     $script:JSoft.Ui.ApplyPresetButton.Add_Click({ Select-JSoftPresetUi })
     $script:JSoft.Ui.PresetListBox.Add_SelectionChanged({ Load-JSoftPresetEditor })
     $script:JSoft.Ui.PresetAppSearchBox.Add_TextChanged({ Refresh-JSoftPresetApplicationEditor })
