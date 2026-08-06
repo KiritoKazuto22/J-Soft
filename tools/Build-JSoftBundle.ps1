@@ -74,7 +74,8 @@ param(
 )
 
 # Bei irm | iex wird der param-Block nicht als Dateiparameter gebunden.
-if ($null -eq $ValidateOnly) {
+$validateOnlyVariable = Get-Variable -Name ValidateOnly -ErrorAction SilentlyContinue
+if ($null -eq $validateOnlyVariable -or $null -eq $validateOnlyVariable.Value) {
     $ValidateOnly = $false
 }
 
