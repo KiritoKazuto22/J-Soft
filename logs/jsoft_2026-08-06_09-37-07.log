@@ -1,0 +1,12 @@
+﻿[2026-08-06 09:37:07.726] [INFO] J-Soft Version: 0.1.0
+[2026-08-06 09:37:07.742] [INFO] Windows Version: Microsoft Windows NT 10.0.26100.0
+[2026-08-06 09:37:07.745] [INFO] WinGet Version: v1.29.280
+[2026-08-06 09:37:07.770] [INFO] Anwendungen geladen: 204
+[2026-08-06 09:37:07.776] [INFO] Administratorrechte: True
+[2026-08-06 09:37:07.784] [INFO] WinGet Status: WinGet bereit.
+[2026-08-06 09:37:36.693] [INFO] Anwendung: Git; Paket-ID: Git.Git; Paketmanager: winget
+[2026-08-06 09:39:20.403] [INFO] Ausgeführte Argumente: install --id Git.Git --exact --source winget --accept-package-agreements --accept-source-agreements --silent --disable-interactivity
+[2026-08-06 09:39:20.409] [INFO] Exitcode für Git: 0
+[2026-08-06 09:39:20.414] [INFO] Anwendung: GitHub Desktop; Paket-ID: GitHub.GitHubDesktop; Paketmanager: winget
+[2026-08-06 09:40:29.853] [INFO] Ausgeführte Argumente: install --id GitHub.GitHubDesktop --exact --source winget --accept-package-agreements --accept-source-agreements --silent --disable-interactivity
+[2026-08-06 09:40:29.858] [INFO] Exitcode für GitHub Desktop: 0
